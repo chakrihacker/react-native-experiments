@@ -12,6 +12,9 @@ const App = () => {
       <Link href={"/use-call-back"}>{"3. Use CallBack Demo"}</Link>
       <Link href={"/advanced-form"}>{"4. Advanced Form"}</Link>
       <Link href={"/skia"}>{"5. Skia"}</Link>
+      <Link href={"/shaders/sdf-line"}>
+        {"6. Skia Shaders and the SDF of a Line"}
+      </Link>
     </ScrollView>
   );
 };
