@@ -15,6 +15,7 @@ const App = () => {
       <Link href={"/shaders/sdf-line"}>
         {"6. Skia Shaders and the SDF of a Line"}
       </Link>
+      <Link href={"/legend-list-optimized"}>{"7. Legend List Optimized"}</Link>
     </ScrollView>
   );
 };
@@ -24,6 +25,7 @@ const styles = StyleSheet.create({
     flex: 1,
     alignItems: "center",
     justifyContent: "center",
+    backgroundColor: "#fff",
   },
 });
 
