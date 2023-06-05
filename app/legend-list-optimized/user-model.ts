@@ -95,6 +95,11 @@ class UserModel {
     }
   };
 
+  getUserListBasedOnSearch = () => {
+    this.obs.isRefreshing.set(true);
+    this.fetchUsers();
+  };
+
   fetchNextUsers = () => {
     if (this.obs.data.peek().length > 0 && !this.obs.hasEndReached.peek()) {
       this.fetchUsers();
@@ -105,12 +110,13 @@ class UserModel {
     fetchUsers: debounce(this.fetchUsers, 250),
     refreshUserList: debounce(this.refreshUserList, 250),
     fetchNextUsers: debounce(this.fetchNextUsers, 250),
+    getUserListBasedOnSearch: debounce(this.getUserListBasedOnSearch, 250),
   };
 
   createListeners = () => {
     const textInputDisposer = observe(this.obs.search, (e) => {
       // Whenever the search input changes, we need to fetch fresh list from page 1
-      this.actions.refreshUserList();
+      this.actions.getUserListBasedOnSearch();
     });
 
     return [textInputDisposer];

@@ -19,16 +19,10 @@ import { userModel } from "./user-model";
 enableLegendStateReact();
 
 const EmptyList = observer(() => {
-  if (
-    userModel.obs.data.length === 0 &&
-    userModel.obs.apiStatus.get() === "pending"
-  ) {
+  if (userModel.obs.apiStatus.get() === "pending") {
     return <ActivityIndicator />;
   }
-  if (
-    userModel.obs.data.length === 0 &&
-    userModel.obs.apiStatus.get() === "error"
-  ) {
+  if (userModel.obs.apiStatus.get() === "error") {
     return (
       <View>
         <Text>{"Failed to Load List"}</Text>
